@@ -113,11 +113,23 @@
       transition: background-color 0.3s ease;
     }
     .kontakt-formular button:hover { background-color: #e0a800; }
-    #form-status {
+
+    .social-icons {
       margin-top: 20px;
-      font-weight: bold;
-      display: none;
+      display: flex;
+      gap: 20px;
     }
+    .social-icons img {
+      width: 40px;
+      height: 40px;
+      filter: grayscale(100%);
+      transition: 0.3s ease;
+    }
+    .social-icons img:hover {
+      filter: grayscale(0%);
+      transform: scale(1.1);
+    }
+
     @media (max-width: 768px) {
       .overlay { padding: 30px; }
       h1, h2 { font-size: 32px; }
@@ -170,44 +182,25 @@
         Sledujte nás i na sociálních sítích.
       </p>
 
+      <!-- Sociální sítě -->
+      <div class="social-icons">
+        <a href="https://www.instagram.com/miroslav.svoboda/" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" />
+        </a>
+        <a href="https://www.facebook.com/mojejmenojemax/" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" />
+        </a>
+      </div>
+
       <h3>Případně nám rovnou napište zprávu</h3>
-      <form id="kontakt-formular" class="kontakt-formular" action="https://formspree.io/f/mnndjdaq" method="POST">
+      <form class="kontakt-formular" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" onsubmit="setTimeout(() => window.location.href = '#uvod', 1000)">
         <input type="text" name="jmeno" placeholder="Vaše jméno" required>
         <input type="email" name="email" placeholder="Váš e-mail" required>
         <textarea name="zprava" rows="5" placeholder="Vaše zpráva" required></textarea>
         <button type="submit">Odeslat</button>
       </form>
-      <div id="form-status">Děkujeme! Vaše zpráva byla úspěšně odeslána.</div>
     </div>
   </section>
-
-  <script>
-    const form = document.getElementById('kontakt-formular');
-    const status = document.getElementById('form-status');
-
-    form.addEventListener('submit', async function (e) {
-      e.preventDefault();
-      const data = new FormData(form);
-      const action = form.action;
-
-      const response = await fetch(action, {
-        method: 'POST',
-        body: data,
-        headers: { 'Accept': 'application/json' }
-      });
-
-      if (response.ok) {
-        form.reset();
-        status.style.display = 'block';
-        status.style.color = 'lightgreen';
-        status.innerText = 'Děkujeme! Vaše zpráva byla úspěšně odeslána.';
-      } else {
-        status.style.display = 'block';
-        status.style.color = 'red';
-        status.innerText = 'Odeslání selhalo. Zkuste to prosím znovu.';
-      }
-    });
-  </script>
 
 </body>
 </html>
