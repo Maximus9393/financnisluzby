@@ -113,7 +113,11 @@
       transition: background-color 0.3s ease;
     }
     .kontakt-formular button:hover { background-color: #e0a800; }
-
+    #form-status {
+      margin-top: 20px;
+      font-weight: bold;
+      display: none;
+    }
     @media (max-width: 768px) {
       .overlay { padding: 30px; }
       h1, h2 { font-size: 32px; }
@@ -167,14 +171,43 @@
       </p>
 
       <h3>Případně nám rovnou napište zprávu</h3>
-      <form class="kontakt-formular" action="#" method="post">
+      <form id="kontakt-formular" class="kontakt-formular" action="https://formspree.io/f/mnndjdaq" method="POST">
         <input type="text" name="jmeno" placeholder="Vaše jméno" required>
         <input type="email" name="email" placeholder="Váš e-mail" required>
         <textarea name="zprava" rows="5" placeholder="Vaše zpráva" required></textarea>
         <button type="submit">Odeslat</button>
       </form>
+      <div id="form-status">Děkujeme! Vaše zpráva byla úspěšně odeslána.</div>
     </div>
   </section>
+
+  <script>
+    const form = document.getElementById('kontakt-formular');
+    const status = document.getElementById('form-status');
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const data = new FormData(form);
+      const action = form.action;
+
+      const response = await fetch(action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        form.reset();
+        status.style.display = 'block';
+        status.style.color = 'lightgreen';
+        status.innerText = 'Děkujeme! Vaše zpráva byla úspěšně odeslána.';
+      } else {
+        status.style.display = 'block';
+        status.style.color = 'red';
+        status.innerText = 'Odeslání selhalo. Zkuste to prosím znovu.';
+      }
+    });
+  </script>
 
 </body>
 </html>
