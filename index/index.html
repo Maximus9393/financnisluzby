@@ -5,19 +5,13 @@
   <title>Profesionální stránka</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Roboto', sans-serif;
       scroll-behavior: smooth;
       background-color: #f8f9fa;
       color: #333;
     }
-
     nav {
       background-color: #0d6efd;
       padding: 20px;
@@ -27,7 +21,6 @@
       z-index: 1000;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
-
     nav a {
       color: white;
       text-decoration: none;
@@ -36,11 +29,7 @@
       font-size: 18px;
       transition: color 0.3s ease;
     }
-
-    nav a:hover {
-      color: #cce5ff;
-    }
-
+    nav a:hover { color: #cce5ff; }
     section {
       min-height: 100vh;
       padding: 120px 10%;
@@ -49,7 +38,6 @@
       justify-content: center;
       position: relative;
     }
-
     .overlay {
       background-color: rgba(0, 0, 0, 0.5);
       padding: 60px;
@@ -59,48 +47,24 @@
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
       margin: auto;
     }
-
-    h1, h2 {
-      font-size: 42px;
-      margin-bottom: 20px;
-      font-weight: 700;
-    }
-
-    h3 {
-      font-size: 26px;
-      margin-top: 40px;
-      margin-bottom: 20px;
-      font-weight: 500;
-    }
-
-    p {
-      font-size: 20px;
-      line-height: 1.6;
-      font-weight: 300;
-    }
-
+    h1, h2 { font-size: 42px; margin-bottom: 20px; font-weight: 700; }
+    h3 { font-size: 26px; margin-top: 40px; margin-bottom: 20px; font-weight: 500; }
+    p { font-size: 20px; line-height: 1.6; font-weight: 300; }
     #uvod {
       background: url('https://cdn.pixabay.com/photo/2016/03/11/02/08/speedometer-1249610_960_720.jpg') center/cover no-repeat;
     }
-
     #sluzby {
       background: url('https://cdn.pixabay.com/photo/2015/03/05/09/55/business-idea-660085_960_720.jpg') center/cover no-repeat;
     }
-
     #kontakt {
       background: url('https://cdn.pixabay.com/photo/2014/08/12/23/23/keyboard-417089_960_720.jpg') center/cover no-repeat;
     }
-
     a.email-link {
       color: #ffc107;
       font-weight: bold;
       text-decoration: none;
     }
-
-    a.email-link:hover {
-      text-decoration: underline;
-    }
-
+    a.email-link:hover { text-decoration: underline; }
     .partners {
       margin-top: 20px;
       display: flex;
@@ -109,7 +73,6 @@
       justify-content: center;
       align-items: center;
     }
-
     .partners img {
       max-height: 60px;
       max-width: 140px;
@@ -118,20 +81,17 @@
       opacity: 0.8;
       transition: 0.3s ease;
     }
-
     .partners img:hover {
       filter: grayscale(0%);
       opacity: 1;
       transform: scale(1.05);
     }
-
     .kontakt-formular {
       display: flex;
       flex-direction: column;
       gap: 15px;
       margin-top: 30px;
     }
-
     .kontakt-formular input,
     .kontakt-formular textarea {
       padding: 12px;
@@ -141,7 +101,6 @@
       background-color: #fff;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
-
     .kontakt-formular button {
       padding: 12px;
       font-size: 18px;
@@ -153,23 +112,12 @@
       cursor: pointer;
       transition: background-color 0.3s ease;
     }
-
-    .kontakt-formular button:hover {
-      background-color: #e0a800;
-    }
+    .kontakt-formular button:hover { background-color: #e0a800; }
 
     @media (max-width: 768px) {
-      .overlay {
-        padding: 30px;
-      }
-
-      h1, h2 {
-        font-size: 32px;
-      }
-
-      p {
-        font-size: 18px;
-      }
+      .overlay { padding: 30px; }
+      h1, h2 { font-size: 32px; }
+      p { font-size: 18px; }
     }
   </style>
 </head>
@@ -195,15 +143,15 @@
 
       <h3>Spolupracujeme s:</h3>
       <div class="partners">
-        <img src="img/ceska.png" alt="Česká spořitelna" />
-        <img src="img/kb.png" alt="Komerční banka" />
-        <img src="img/csob.png" alt="ČSOB" />
-        <img src="img/unicredit.png" alt="UniCredit Bank" />
-        <img src="img/mbank.png" alt="mBank" />
-        <img src="img/rb.png" alt="Raiffeisenbank" />
-        <img src="img/koop.png" alt="Kooperativa" />
-        <img src="img/nn.png" alt="NN pojišťovna" />
-        <img src="img/uniqa.png" alt="Uniqa" />
+        <img src="./img/ceska.png" alt="Česká spořitelna" />
+        <img src="./img/kb.png" alt="Komerční banka" />
+        <img src="./img/csob.png" alt="ČSOB" />
+        <img src="./img/unicredit.png" alt="UniCredit Bank" />
+        <img src="./img/mbank.png" alt="mBank" />
+        <img src="./img/rb.png" alt="Raiffeisenbank" />
+        <img src="./img/koop.png" alt="Kooperativa" />
+        <img src="./img/nn.png" alt="NN pojišťovna" />
+        <img src="./img/uniqa.png" alt="Uniqa" />
       </div>
     </div>
   </section>
@@ -218,7 +166,7 @@
         Sledujte nás i na sociálních sítích.
       </p>
 
-      <h3>Příapadně nám rovnou napište zprávu</h3>
+      <h3>Případně nám rovnou napište zprávu</h3>
       <form class="kontakt-formular" action="#" method="post">
         <input type="text" name="jmeno" placeholder="Vaše jméno" required>
         <input type="email" name="email" placeholder="Váš e-mail" required>
